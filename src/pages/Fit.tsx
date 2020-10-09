@@ -1,19 +1,26 @@
 import React from 'react'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-const driveApi = () => {
-	return fetch('https://www.googleapis.com/drive/v3/files/0BwwA4oUTeiV1UVNwOHItT0xfa2M')
-		.then(data => console.log(data))
-		.catch(err => console.log(err))
-}
-
-const Fit = () => {
-	driveApi()
-
-	return (
-		<section>
-			Hola guorld
+const Fit = () =>
+(
+	<Layout>
+		<SEO title='FIT' />
+		<section style={{ marginTop: '10vh' }} >
+			<a style={{
+				padding: '2rem',
+				backgroundColor: '#663399',
+				borderRadius: '25%',
+				textDecoration: 'none',
+				color: '#FFF',
+				fontSize: '18px'
+			}}
+				href="https://github.com/yoliveros/ontouch-site/raw/master/src/FitInstaller/FitInstaller.msi"
+				download>
+				Descargar FIT
+			</a>
 		</section>
-	)
-}
+	</Layout>
+)
 
 export default Fit

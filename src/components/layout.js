@@ -23,19 +23,26 @@ const Layout = ({ children }) => {
   `)
 
 	return (
-		<>
+		<div style={{
+			position: 'relative',
+			minHeight: '100vh',
+			textAlign: 'center'
+		}}>
 			<Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-			<div style={{
-				margin: `0 auto`,
-				maxWidth: 960,
-				padding: `0 1.0875rem 1.45rem`,
+			<main style={{
+				paddingBottom: '2.5rem'
 			}}>
-				<main>{children}</main>
-				<footer style={{ marginTop: `2rem` }}>
-					© {new Date().getFullYear()}, OnTouch
-				</footer>
-			</div>
-		</>
+				{children}
+			</main>
+			<footer style={{
+				position: 'absolute',
+				bottom: '0',
+				width: '100%',
+				height: '2.5rem'
+			}}>
+				© {new Date().getFullYear()}, OnTouch
+			</footer>
+		</div>
 	)
 }
 
